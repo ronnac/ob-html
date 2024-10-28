@@ -166,7 +166,7 @@ This function is called by `org-babel-execute-src-block'."
          (height (cdr (assq :height params)))
          (window-size (if (and width height)
                           (format " --window-size=%s,%s" width height) ""))
-         (cmd (format "%s --headless --disable-gpu --screenshot=%s %s file://%s"
+         (cmd (format "%s --headless=old --disable-gpu --screenshot=%s %s file://%s"
                       (shell-quote-argument org-babel-html-chrome-executable)
                       (shell-quote-argument (expand-file-name graphics-file))
                       window-size
